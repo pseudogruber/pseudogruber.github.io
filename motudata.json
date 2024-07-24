@@ -1,0 +1,3693 @@
+ {
+	"config": {
+		"trackHighestDivision": true
+	},
+	"appVersion": 2,
+	"credit": [],
+	"game": "Masters of the Universe",
+	"preserveLineBreaks": true,
+	"singleFaction": true,
+	"stats": [
+		{
+			"name": "Health",
+			"abbreviation": "H"
+		},
+		{
+			"name": "Toughness",
+			"abbreviation": "T"
+		},
+		{
+			"name": "Mind",
+			"abbreviation": "M"
+		},
+		{
+			"name": "Power",
+			"abbreviation": "P"
+		},
+		{
+			"name": "Perception",
+			"abbreviation": "Pe"
+		},
+		{
+			"name": "Strength",
+			"abbreviation": "St"
+		},
+		{
+			"name": "StandardSpeed",
+			"abbreviation": "Sp",
+			"trail": "/"
+		},
+		{
+			"name": "FocusedSpeed",
+			"shareWith": "StandardSpeed"
+		}
+	],
+	"dataTableKeys": [
+		"characters",
+		"warriors"
+	],
+	"limits": [],
+	"counts": [],
+	"calculations": [],
+	"additionalPrint": [
+		{
+			"propertyName": "Skills",
+			"label": "Skills"
+		},
+		{
+			"propertyName": "specialRules",
+			"label": "Special Rules",
+			"dataSource": "keywords"
+		}
+	],
+	"elements": [
+		{
+			"propertyName": "factions",
+			"label": "Faction",
+			"type": "faction",
+			"dataSource": "factions",
+			"removeWhenNotPrimary": [
+				"armyBonus"
+			],
+			"divisionProperty": "alignment",
+			"divisions": [
+				"Warbands"
+			],
+			"children": [
+				{
+					"propertyName": "characters",
+					"dataSource": "characters",
+					"label": "Hero",
+					"type": "main",
+					"tierProperty": "heroicTier",
+					"tierData": "heroicTiers",
+					"tiers": [],
+					"children": [
+						{
+							"propertyName": "keywords",
+							"label": "Keywords",
+							"type": "static",
+							"dataSource": "keywords"
+						},
+						{
+							"propertyName": "skills",
+							"label": "Skills",
+							"type": "static",
+							"dataSource": "skills",
+							"statsTableDirection": "horizontal",
+							"stats": [
+								{
+									"name": "Skill",
+									"propertyName": "name"
+								},
+								{
+									"name": "Definition",
+									"propertyName": "definition",
+									"inTooltip": true
+								},
+								{
+									"name": "AP",
+									"propertyName": "ap"
+								},
+								{
+									"name": "Mana",
+									"propertyName": "mana"
+								}
+							]
+						},
+						{
+							"propertyName": "specialRules",
+							"label": "Special Rules",
+							"type": "static",
+							"dataSource": "keywords",
+							"defineInPreview": true,
+							"children": [
+								{
+									"label": "Special Rules",
+									"propertyName": "specialRules",
+									"type": "static",
+									"dataSource": "keywords"
+								}
+							]
+						},
+						{
+							"propertyName": "upgrades",
+							"label": "Upgrades",
+							"type": "upgrade",
+							"dataSource": "upgrades",
+							"statsTableDirection": "horizontal",
+							"stats": [
+								{
+									"name": "Mana Cost",
+									"propertyName": "mana"
+								},
+								{
+									"name": "AP",
+									"propertyName": "ap"
+								},
+								{
+									"name": "Range",
+									"propertyName": "range"
+								},
+								{
+									"name": "Dice Modifier",
+									"propertyName": "diceModifier"
+								}
+							]
+						}
+					]
+				},
+				{
+					"propertyName": "fatecards",
+					"dataSource": "fatecards",
+					"label": "Fate Cards",
+					"type": "main",
+					"tierProperty": "heroicTier",
+					"tierData": "heroicTiers",
+					"statsTableDirection": "horizontal",
+					"badges": [
+						{
+							"propertyName": "initiative",
+							"label": "Init"
+						},
+						{
+							"propertyName": "ap",
+							"label": "AP"
+						},
+						{
+							"propertyName": "mana",
+							"label": "Mana"
+						}
+					],
+					"stats": [
+						{
+							"name": "Initiative",
+							"propertyName": "initiative"
+						},
+						{
+							"name": "Description",
+							"propertyName": "description"
+						},
+						{
+							"name": "AP",
+							"propertyName": "ap"
+						},
+						{
+							"name": "Mana",
+							"propertyName": "mana"
+						}
+					],
+					"tiers": [],
+					"children": []
+				},
+				{
+					"propertyName": "glorycards",
+					"dataSource": "glorycards",
+					"label": "Glory Cards",
+					"type": "main",
+					"tierProperty": "heroicTier",
+					"tierData": "heroicTiers",
+					"statsTableDirection": "horizontal",
+					"badges": [
+						{
+							"propertyName": "initiative",
+							"label": "Init"
+						},
+						{
+							"propertyName": "ap",
+							"label": "AP"
+						},
+						{
+							"propertyName": "mana",
+							"label": "Mana"
+						}
+					],
+					"stats": [
+						{
+							"name": "Initiative",
+							"propertyName": "initiative"
+						},
+						{
+							"name": "Description",
+							"propertyName": "description"
+						},
+						{
+							"name": "AP",
+							"propertyName": "ap"
+						},
+						{
+							"name": "Mana",
+							"propertyName": "mana"
+						},
+						{
+							"name": "VP",
+							"propertyName": "vp"
+						}
+					],
+					"tiers": [],
+					"children": []
+				}
+			]
+		}
+	],
+	"data": {
+		"glorycards": [
+			{
+				"name": "During this activation or interruption, at least 2 different characters..",
+				"initiative": 8,
+				"ap": 2,
+				"mp": 3,
+				"description": "During this activation or interruption, at least 2 different characters receive at least 1 Wound.",
+				"vp": 10,
+				"alternativeBonus": "+1 AP",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "This is the third or fourth round, and all your characters are still...",
+				"initiative": 9,
+				"ap": 2,
+				"mp": 2,
+				"description": "This is the third or fourth round, and all your characters are still on the battleground.",
+				"vp": 30,
+				"alternativeBonus": "+1 AP",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Use a flank attack to knock out an enemy.",
+				"initiative": 10,
+				"ap": 2,
+				"mp": 1,
+				"description": "Use a flank attack to knock out an enemy.",
+				"vp": 10,
+				"alternativeBonus": "+1 AP",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Knock out an enemy during the first round.",
+				"initiative": 1,
+				"ap": 3,
+				"mp": 2,
+				"description": "Knock out an enemy during the first round.",
+				"vp": 30,
+				"alternativeBonus": "+1 AP",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During an interruption, knock out an enemy.",
+				"initiative": 9,
+				"ap": 2,
+				"mp": 2,
+				"description": "During an interruption, knock out an enemy.",
+				"vp": 30,
+				"alternativeBonus": "+1 AP",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "At the end of this activation or interruption, at least 3...",
+				"initiative": 7,
+				"ap": 3,
+				"mp": 1,
+				"description": "At the end of this activation or interruption, at least 3 characters have a Debuff.",
+				"vp": 10,
+				"alternativeBonus": "+1 AP",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Knock out an enemy before anenemy knock out one of your characters.",
+				"initiative": 11,
+				"ap": 1,
+				"mp": 2,
+				"description": "Knock out an enemy before anenemy knock out one of your characters.",
+				"vp": 20,
+				"alternativeBonus": "+1 AP",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "One of your characters ends move action in the enemy's deployment zone.",
+				"initiative": 2,
+				"ap": 3,
+				"mp": 0,
+				"description": "One of your characters ends move action in the enemy's deployment zone.",
+				"vp": 10,
+				"alternativeBonus": "+1 AP",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "One of your characters knocks out a second enemy.",
+				"initiative": 4,
+				"ap": 3,
+				"mp": 1,
+				"description": "One of your characters knocks out a second enemy.",
+				"vp": 30,
+				"alternativeBonus": "+1 AP",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During a single activation or interruption, deal at least 3 Wounds.",
+				"initiative": 8,
+				"ap": 2,
+				"mp": 2,
+				"description": "During a single activation or interruption, deal at least 3 Wounds.",
+				"vp": 20,
+				"alternativeBonus": "+1 AP",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During a single activation or interruption, use at least 5 Mana.",
+				"initiative": 3,
+				"ap": 3,
+				"mp": 1,
+				"description": "During a single activation or interruption, use at least 5 Mana.",
+				"vp": 10,
+				"alternativeBonus": "+1 AP",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Use a Melee weapon to knock out an enemy.",
+				"initiative": 10,
+				"ap": 2,
+				"mp": 1,
+				"description": "Use a Melee weapon to knock out an enemy.",
+				"vp": 20,
+				"alternativeBonus": "+1 AP",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Use a Ranged weapon to knock out an enemy.",
+				"initiative": 10,
+				"ap": 2,
+				"mp": 1,
+				"description": "Use a Ranged weapon to knock out an enemy.",
+				"vp": 20,
+				"alternativeBonus": "+1 AP",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Use a Spell weapon to knock out an enemy.",
+				"initiative": 10,
+				"ap": 2,
+				"mp": 1,
+				"description": "Use a Spell weapon to knock out an enemy.",
+				"vp": 20,
+				"alternativeBonus": "+1 AP",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Make at least 3 attacks during a single activation or interruption.",
+				"initiative": 7,
+				"ap": 3,
+				"mp": 0,
+				"description": "Make at least 3 attacks during a single activation or interruption.",
+				"vp": 20,
+				"alternativeBonus": "+1 AP",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			}
+		],
+		"fatecards": [
+			{
+				"name": "Gain 1 Mana for each Wound...",
+				"initiative": 1,
+				"ap": 2,
+				"mana": 0,
+				"description": "Gain 1 Mana for each Wound on this character (to maximum of 4).",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, all active skills...",
+				"initiative": 1,
+				"ap": 1,
+				"mana": 2,
+				"description": "During this activation or interruption, all active skill cost 1 Action less (to minimum of 0).",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Gain 1 Mana for each character with a Debuff...",
+				"initiative": 1,
+				"ap": 1,
+				"mana": 2,
+				"description": "Gain 1 Mana for each character with a Debuff (to maximum of 3).",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, if this character inflicts...",
+				"initiative": 1,
+				"ap": 2,
+				"mana": 2,
+				"description": "During this activation or interruption, if this character inflicts 2 or more Wounds, gain 1 Action and 1 Mana.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Gain 1 Action for each character with a Debuff....",
+				"initiative": 1,
+				"ap": 1,
+				"mana": 2,
+				"description": "Gain 1 Action for each character with a Debuff (to a maximum of 2).",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Make a free 2 hex move action.",
+				"initiative": 1,
+				"ap": 1,
+				"mana": 2,
+				"description": "Make a free 2 hex move action.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, all attacks...",
+				"initiative": 2,
+				"ap": 2,
+				"mana": 2,
+				"description": "During this activation or interruption, all attacks gain +1 Die, but deal 1 less Wound (to minimum of 1).",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, spell attacks...",
+				"initiative": 2,
+				"ap": 2,
+				"mana": 0,
+				"description": "During this activation or interruption, spell attacks gain +1 Die for every 2 Mana in the character's possession.\n          Mana is counted after it is spend for an attack and any additional bonuses.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "If this character has a Focus, gain 2 Mana.",
+				"initiative": 2,
+				"ap": 2,
+				"mana": 2,
+				"description": "If this character has a Focus, gain 2 Mana.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "At the end of this activation, if this character ...",
+				"initiative": 2,
+				"ap": 2,
+				"mana": 1,
+				"description": "At the end of this activation, if this character has 3 or more Mana, draw a random fate cards from your discard pile.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "+1 Action",
+				"initiative": 2,
+				"ap": 2,
+				"mana": 0,
+				"description": "+1 Action",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Until the end of the round, this character may reroll...",
+				"initiative": 3,
+				"ap": 2,
+				"mana": 2,
+				"description": "+1 Action",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Discard a fate card to gain 1 Action and 1 Mana...",
+				"initiative": 3,
+				"ap": 2,
+				"mana": 1,
+				"description": "Discard a fate card to gain 1 Action and 1 Mana.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, gain +1 Die...",
+				"initiative": 4,
+				"ap": 2,
+				"mana": 3,
+				"description": "During this activation or interruption, gain +1 Die for skill tests.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, if this character's attack...",
+				"initiative": 4,
+				"ap": 3,
+				"mana": 0,
+				"description": "During this activation or interruption, if this character's attack results in 3 or more Successes, gain a Focus.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, if this character's attack...",
+				"initiative": 4,
+				"ap": 3,
+				"mana": 1,
+				"description": "During this activation or interruption, if this character's attack results in 3 or more Successes, draw a fate card.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "if this character has 3 or more Mana, draw a fate card.",
+				"initiative": 4,
+				"ap": 3,
+				"mana": 0,
+				"description": "if this character has 3 or more Mana, draw a fate card.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Until the end of the round, this character gains...",
+				"initiative": 4,
+				"ap": 2,
+				"mana": 1,
+				"description": "Until the end of the round, this character gains +1 Die for defence tests.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, Spell weapons...",
+				"initiative": 4,
+				"ap": 2,
+				"mana": 2,
+				"description": "During this activation or interruption, Spell weapon cost 1 Action less (to minimum of 1).",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Remove all Mana from this character to gain 1 Action...",
+				"initiative": 5,
+				"ap": 2,
+				"mana": 0,
+				"description": "Remove all Mana from this character to gain 1 Action for every 2 Mana removed.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation, this character cannot...",
+				"initiative": 5,
+				"ap": 3,
+				"mp": 2,
+				"description": "During this activation, this character cannot perform a focus action.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation, -1 Die for all attack tests.",
+				"initiative": 5,
+				"ap": 4,
+				"mp": 0,
+				"description": "During this activation, -1 Die for all attack tests.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "+1 Action",
+				"initiative": 5,
+				"ap": 2,
+				"mp": 1,
+				"description": "+1 Action",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Discard a fate card to draw a fate card.",
+				"initiative": 6,
+				"ap": 3,
+				"mp": 0,
+				"description": "Discard a fate card to draw a fate card.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, a focus action costs...",
+				"initiative": 6,
+				"ap": 2,
+				"mp": 1,
+				"description": "During this activation or interruption, a focus action costs 1 less Action (to minimum of 0).",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, if this character's attack...",
+				"initiative": 6,
+				"ap": 3,
+				"mp": 0,
+				"description": "During this activation or interruption, if this character's attack results in 5 or more Successes, deal 1 extra Wound.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, if this character's attack...",
+				"initiative": 6,
+				"ap": 3,
+				"mp": 0,
+				"description": "During this activation or interruption, if this character's attack results in 2 or more Successes, gain 1 Mana.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "At the end of this activation or interruption, gain an overwatch.",
+				"initiative": 6,
+				"ap": 2,
+				"mp": 1,
+				"description": "At the end of this activation or interruption, gain an overwatch.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "At the end of this activation or interruption, gain a Focus.",
+				"initiative": 6,
+				"ap": 2,
+				"mp": 1,
+				"description": "At the end of this activation or interruption, gain a Focus.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, all attacks against enemies...",
+				"initiative": 7,
+				"ap": 2,
+				"mp": 2,
+				"description": "During this activation or interruption, all attacks against enemies with a Debuff gain +1 Die.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, Melee attacks cost...",
+				"initiative": 7,
+				"ap": 2,
+				"mp": 0,
+				"description": "During this activation or interruption, Melee attacks cost 1 Action less (to minimum of 1).",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption Ranged attacks cost...",
+				"initiative": 7,
+				"ap": 2,
+				"mp": 0,
+				"description": "During this activation or interruption Ranged attacks cost 1 Action less (to minimum of 1).",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "+2 Mana",
+				"initiative": 7,
+				"ap": 2,
+				"mp": 0,
+				"description": "+2 Mana",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "If this character is engaged, draw a random fate card...",
+				"initiative": 7,
+				"ap": 2,
+				"mp": 1,
+				"description": "If this character is engaged, draw a random fate card from your discard pile.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "If this character had a Focus at the beginning of this activation or interruption...",
+				"initiative": 8,
+				"ap": 2,
+				"mp": 1,
+				"description": "If this character had a Focus at the beginning of this activation or interruption, gain 1 Action and 1 Mana.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Remove a Debuff from this character.",
+				"initiative": 8,
+				"ap": 2,
+				"mp": 2,
+				"description": "Remove a Debuff from this character.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Until the end of the round, this character gains +1 Die...",
+				"initiative": 8,
+				"ap": 2,
+				"mp": 1,
+				"description": "Until the end of the round, this character gains +1 Die to all attacks and skill tests made during interruptions.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "If this character has at least 4 Mana, gain 1 Action and 1 Mana.",
+				"initiative": 8,
+				"ap": 2,
+				"mp": 0,
+				"description": "If this character has at least 4 Mana, gain 1 Action and 1 Mana.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, if this character's attacks...",
+				"initiative": 8,
+				"ap": 2,
+				"mp": 1,
+				"description": "During this activation or interruption, if this character's attacks results in 4 or more Successes, gain 1 Action.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, this character cannot be interrupted.",
+				"initiative": 8,
+				"ap": 2,
+				"mp": 0,
+				"description": "During this activation or interruption, this character cannot be interrupted.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "At the end of this activation or interruption, gain 2 Mana.",
+				"initiative": 9,
+				"ap": 2,
+				"mp": 1,
+				"description": "At the end of this activation or interruption, gain 2 Mana.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "If this card is played during an interruption, gain 1 Action and 1 Mana.",
+				"initiative": 9,
+				"ap": 2,
+				"mp": 1,
+				"description": "If this card is played during an interruption, gain 1 Action and 1 Mana.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Gain a Focus.",
+				"initiative": 9,
+				"ap": 1,
+				"mp": 2,
+				"description": "Gain a Focus.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, add +1 to the scope of Spell attacks.",
+				"initiative": 9,
+				"ap": 1,
+				"mp": 1,
+				"description": "During this activation or interruption, add +1 to the scope of Spell attacks.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, add +1 to the scope of Melee attacks.",
+				"initiative": 9,
+				"ap": 1,
+				"mp": 1,
+				"description": "During this activation or interruption, add +1 to the scope of Melee attacks.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, add +1 to the scope of Ranged attacks.",
+				"initiative": 9,
+				"ap": 1,
+				"mp": 1,
+				"description": "During this activation or interruption, add +1 to the scope of Ranged attacks.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, each attack gain +1 Die.",
+				"initiative": 10,
+				"ap": 1,
+				"mp": 1,
+				"description": "During this activation or interruption, each attack gain +1 Die.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "If this card is played during an interruption, this characte...",
+				"initiative": 10,
+				"ap": 1,
+				"mp": 2,
+				"description": "If this card is played during an interruption, this character can perform a free move action.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, if this character's skill test...",
+				"initiative": 3,
+				"ap": 2,
+				"mp": 2,
+				"description": "During this activation or interruption, if this character's skill test results in 3 or more Successes, gain a Focus.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Set this character's Mana to 3.",
+				"initiative": 7,
+				"ap": 2,
+				"mp": 0,
+				"description": "Set this character's Mana to 3.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, add +1 to the scope of skill tests.",
+				"initiative": 9,
+				"ap": 1,
+				"mp": 2,
+				"description": "During this activation or interruption, add +1 to the scope of skill tests.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Gain 1 Wound, 1 AP, and 1 Mana.",
+				"initiative": 5,
+				"ap": 3,
+				"mp": 0,
+				"description": "Gain 1 Wound, 1 AP, and 1 Mana.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "If this character has at least 3 Wounds, they perform a free move action.",
+				"initiative": 10,
+				"ap": 1,
+				"mp": 1,
+				"description": "If this character has at least 3 Wounds, they perform a free move action.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Until the end of the round, if this character has a Debuff, all of their tests gain 1 Die.",
+				"initiative": 8,
+				"ap": 2,
+				"mp": 1,
+				"description": "Until the end of the round, if this character has a Debuff, all of their tests gain 1 Die.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "If this character has a Buff, gain 1 AP and 1 Mana.",
+				"initiative": 6,
+				"ap": 2,
+				"mp": 1,
+				"description": "If this character has a Buff, gain 1 AP and 1 Mana.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "At the end of this activation, remove all Mana from this character...",
+				"initiative": 10,
+				"ap": 1,
+				"mp": 1,
+				"description": "At the end of this activation, remove all Mana from this character, and gain an Overwatch and a Focus.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "If this card is played during an interruption when performing a move...",
+				"initiative": 7,
+				"ap": 2,
+				"mp": 2,
+				"description": "If this card is played during an interruption when performing a move action, this character can move in any direction.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Until the end of the round, this character cannot be pushed of pulled.",
+				"initiative": 5,
+				"ap": 3,
+				"mp": 0,
+				"description": "Until the end of the round, this character cannot be pushed of pulled.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "Gain 1 Wound, perform a free Melee attack with -1 Die.",
+				"initiative": 3,
+				"ap": 2,
+				"mp": 1,
+				"description": "Gain 1 Wound, perform a free Melee attack with -1 Die.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "If this character has a Debuff, gain 1 AP and 1 Mana.",
+				"initiative": 1,
+				"ap": 2,
+				"mp": 2,
+				"description": "If this character has a Debuff, gain 1 AP and 1 Mana.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this interruption, add +1 to the scope of all attacks.",
+				"initiative": 7,
+				"ap": 2,
+				"mp": 2,
+				"description": "During this interruption, add +1 to the scope of all attacks.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation, active skills can be used twice.",
+				"initiative": 8,
+				"ap": 2,
+				"mp": 1,
+				"description": "During this activation, active skills can be used twice.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "If there are no other characters within 6\", gain 1 AP and 1 Mana.",
+				"initiative": 7,
+				"ap": 2,
+				"mp": 1,
+				"description": "If there are no other characters within 6\", gain 1 AP and 1 Mana.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "+3 Mana. At the end of this activation or interruption, this character loses all Mana.",
+				"initiative": 2,
+				"ap": 1,
+				"mp": 4,
+				"description": "+3 Mana. At the end of this activation or interruption, this character loses all Mana.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "During this activation or interruption, draw a fate card after every flank attack.",
+				"initiative": 5,
+				"ap": 3,
+				"mp": 0,
+				"description": "During this activation or interruption, draw a fate card after every flank attack.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			},
+			{
+				"name": "If this character has at least 3 Wounds, gain 1 AP...",
+				"initiative": 9,
+				"ap": 1,
+				"mp": 2,
+				"description": "If this character has at least 3 Wounds, gain 1 AP, an Enhancement Buff, and a Knockdown Debuff.",
+				"factions": [
+					{
+						"name": "Masters of the Universe"
+					},
+					{
+						"name": "Evil Warriors"
+					}
+				]
+			}
+		],
+		"upgrades": [
+			{
+				"name": "Axe",
+				"points": 1,
+				"unique": true,
+				"type": "Melee",
+				"diceModifier": "0",
+				"definition": "If the attack uses a focus, add +1 dice.\n          1 success: 1 wound\n          3 successes: 2 wounds",
+				"availableIn": [
+					"Ram Man"
+				]
+			},
+			{
+				"name": "Battle Axe",
+				"points": 5,
+				"unique": true,
+				"type": "Melee",
+				"diceModifier": "0",
+				"definition": "If the attack was made immediately after a move action, the target cannot roll more than 2 dice during their defence test.\n          1 success: 1 wound\n          2 successes: 2 wounds\n          4 successes: 3 wounds"
+			},
+			{
+				"name": "Staff of Avion",
+				"points": 3,
+				"unique": true,
+				"type": "Melee",
+				"diceModifier": "0",
+				"definition": "If the attack uses a focus, add +3 dice.\n          Cannot roll more than 6 dice. \n          1 success: 1 wound\n          3 successes: 2 wounds"
+			},
+			{
+				"name": "Havoc Staff",
+				"points": 2,
+				"unique": true,
+				"type": "Melee",
+				"diceModifier": "0",
+				"definition": "Each time an ally receives at least 1 wound, Skeletor gains 1 mana.",
+				"availableIn": [
+					"Skeletor",
+					"Skeletor with Panthor"
+				]
+			},
+			{
+				"name": "Stink Gun",
+				"points": 3,
+				"unique": true,
+				"type": "Ranged",
+				"diceModifier": "0",
+				"range": 12,
+				"definition": "Gain +1 Die for every 2 Mana in Stinkor's Posession\n          1 success: 1 Wound\n2 successes: 1 Wound and a Blind debuff\n3 successes: 2 Wounds and a Blind debuff",
+				"availableIn": [
+					"Stinkor"
+				]
+			},
+			{
+				"name": "Electro Shocker Spear",
+				"points": 3,
+				"unique": true,
+				"type": "Ranged",
+				"diceModifier": "0",
+				"definition": "Before attacking, Whiplash can spend a Focus to gain 3 Dice and use this as a ranged weapon with range of 12\".\n          1 success: 1 Wound\n3 successes: 1 Wound 1 Wound (if this attack had a Focus)\n4 successes: 2 Wound 1 Wound (if this attack had a Focus)",
+				"availableIn": [
+					"Whiplash"
+				]
+			},
+			{
+				"name": "Teela's Sword",
+				"points": 2,
+				"unique": true,
+				"type": "Melee",
+				"diceModifier": "+1",
+				"definition": "If an attack with this weapon results in 2 or more Successes, Teela can perform a free 2 hex move action. This action can be made in any direction and cannot be interrupted..\n          1 success: 1 Wounds\n4 successes: 2 Wounds",
+				"availableIn": [
+					"Teela"
+				]
+			},
+			{
+				"name": "Staff of Power",
+				"points": 2,
+				"unique": true,
+				"type": "Melee",
+				"diceModifier": "0",
+				"definition": "Upon interruption, gain 1 Mana.\n          During interruptions, Spell attacks are treated as skill tests and attack tests.\n          1 success: 1 Wounds\n3 successes: 2 Wounds",
+				"availableIn": [
+					"Sorceress"
+				]
+			},
+			{
+				"name": "Bionatops Blaster",
+				"points": 2,
+				"range": 16,
+				"unique": true,
+				"type": "Ranged",
+				"diceModifier": "-1",
+				"definition": "Once per round, if this character did not move during this activation or interruption and the target is at a distance of 8\" or farther, add +3 Dice.\n          2 success: 1 Wound\n4 successes: 2 Wounds\n6 successes: 3 Wounds"
+			},
+			{
+				"name": "Spear",
+				"points": 3,
+				"unique": true,
+				"type": "Melee",
+				"diceModifier": "0",
+				"definition": "Can target enemies within 2 hexes (assuming they are in line of sight), even if they are not engaged with this character.\n          1 success: 1 Wound\n          3 successes: 2 Wounds\n          5 successes: 3 Wounds"
+			},
+			{
+				"name": "Sword of Power",
+				"points": 3,
+				"unique": true,
+				"type": "Melee",
+				"diceModifier": "0",
+				"definition": "Before attacking, spend up to 3 mana to gain 1 dice per mana spent.\n          1 success: 1 wound\n          3 successes: 2 wounds\n          5 successes: 3 wounds",
+				"availableIn": [
+					"He-Man",
+					"He-Man with Battle Cat"
+				]
+			},
+			{
+				"name": "Dagger",
+				"points": 3,
+				"unique": true,
+				"type": "Dagger",
+				"diceModifier": "0",
+				"definition": "This does not use a melee weapon slot. Attacks with this weapon cost 1 AP less (to a minimum of 1).\n          1 success: 1 wound\n          3 successes: 1 wound and 1 wound (if flank attack)"
+			},
+			{
+				"name": "Terror Claws",
+				"points": 3,
+				"unique": true,
+				"type": "Melee",
+				"diceModifier": "+1",
+				"definition": "During interruptions, attacks with this weapon cost 1 AP less (to a minimum of 0).\n          1 success: 1 wound\n          2 successes: 1 wounds and a knockdown\n          4 successes: 2 wounds and a knockdown",
+				"availableIn": [
+					"He-Man"
+				]
+			},
+			{
+				"name": "Trident",
+				"points": 4,
+				"unique": true,
+				"type": "Melee",
+				"diceModifier": "0",
+				"definition": "If the target is in difficult terrain, gain +1 die.\n          1 success: 1 wound\n          2 successes: 2 wounds\n          4 successes: 3 wounds",
+				"availableIn": [
+					"Mer-Man"
+				]
+			},
+			{
+				"name": "Sword of Rakash",
+				"points": 4,
+				"unique": true,
+				"type": "Melee",
+				"diceModifier": "0",
+				"definition": "All melee, spells, and ranged attacks of this character gain 1 free reroll for each character with a Debuff (to maximum of 3).\n          1 success: 1 wound\n          2 successes: 2 wounds\n          5 successes: 3 wounds"
+			},
+			{
+				"name": "Electronic Sword of Power",
+				"points": 4,
+				"unique": true,
+				"type": "Melee",
+				"diceModifier": "0",
+				"definition": "The target must choose to either only roll a number of dice equal to their mana for their defence test, or roll dice normally but only succeed on results of 6.\n          1 success: 1 wound\n          3 successes: 2 wounds\n          5 successes: 3 wounds"
+			},
+			{
+				"name": "Flying Fists",
+				"points": 3,
+				"unique": true,
+				"type": "Melee",
+				"diceModifier": "+1",
+				"definition": "If the attack knocks out the target, this character can perform a free move action.\n          1 success: 1 wound\n          2 successes: 1 wound and this character gains a Focus\n          3 successes: 2 wounds and this character gains a Focus"
+			},
+			{
+				"name": "Longsword",
+				"points": 2,
+				"unique": true,
+				"type": "Melee",
+				"diceModifier": "0",
+				"definition": "If the target has a debuff, gain +1 die.\n          1 success: 1 wound\n          3 successes: 2 wounds\n          5 successes: 2 wounds and 1 wound (if the target has a debuff)",
+				"availableIn": [
+					"Tri-Klops"
+				]
+			},
+			{
+				"name": "Hook Attachment",
+				"points": 2,
+				"unique": true,
+				"type": "Hook Attachment",
+				"diceModifier": "+1",
+				"definition": "Trap Jaw must equip this weapon.\n          This does not use a melee weapon slot.\n          1 success: 1 wound\n          3 successes: 2 wounds",
+				"availableIn": [
+					"Trap Jaw"
+				]
+			},
+			{
+				"name": "Laser Attachment",
+				"points": 0,
+				"unique": true,
+				"type": "Laser Attachment",
+				"diceModifier": "-1",
+				"definition": "This does not use a ranged weapon slot.\n          Before attacking, Trap Jaw may spend either 1 extra AP to gain one of the bonuse below or 2 extra AP to gain both bonuses:\n          +2 dice or increase range by 4\"\n          1 success: 1 wound\n          3 successes: 2 wounds\n          5 successes: 3 wounds",
+				"availableIn": [
+					"Trap Jaw"
+				]
+			},
+			{
+				"name": "Purple Sword of Power",
+				"points": 3,
+				"unique": true,
+				"type": "Melee",
+				"diceModifier": "0",
+				"definition": "When this character has a focus, add +1 die to spell and skill tests.\n          1 success: 1 wound\n          2 successes: 1 wound and this character gains 2 mana\n          3 successes: 2 wounds and this character gains 2 mana"
+			},
+			{
+				"name": "Mace",
+				"points": 3,
+				"unique": true,
+				"type": "Melee",
+				"diceModifier": "0",
+				"definition": "When this character has a focus, add +1 die to all defence tests.\n          1 success: 1 wound\n          2 successes: 1 wound and push target 2 hexes\n          3 success: 2 wounds and push target 2 hexes"
+			},
+			{
+				"name": "Arm Cannon",
+				"points": 2,
+				"unique": true,
+				"type": "Arm Cannon",
+				"diceModifier": "0",
+				"range": 12,
+				"definition": "This does not use a ranged weapon slot. Attacks with this weapon cost 1 AP less (to a minimum of 1) and do not receive a penalty to the scope during interruption.\n          1 success: 1 wound\n          4 successes: 2 wounds"
+			},
+			{
+				"name": "Fear Gas Cannon",
+				"points": 4,
+				"unique": true,
+				"type": "Ranged",
+				"range": 16,
+				"diceModifier": "0",
+				"definition": "Gain 1 die for each character with a debuff (to a maximum of 3).\n          1 success: 1 wound\n          2 successes: 1 wound and a cripple\n          3 successes: 2 wounds and a cripple"
+			},
+			{
+				"name": "Flamethrower",
+				"points": 2,
+				"unique": true,
+				"type": "Ranged",
+				"range": 8,
+				"diceModifier": "-1",
+				"definition": "This weapon affects the target and all characters within 2 hexes from them. Targets' defence tests only succeed on results of 6.\n          2 successes: 1 wound\n          3 successes: 2 wounds",
+				"availableIn": [
+					"Stratos"
+				]
+			},
+			{
+				"name": "Blaster",
+				"points": 4,
+				"unique": true,
+				"type": "Ranged",
+				"range": 12,
+				"diceModifier": "0",
+				"definition": "Once per every activation or interruption, if this character has made a ranged attack using a focus, this character can immediately perform a free ranged attack with the blaster.\n          2 successes: 1 wound\n          3 successes: 2 wounds"
+			},
+			{
+				"name": "Horde Crossbow",
+				"points": 3,
+				"unique": true,
+				"type": "Ranged",
+				"range": 12,
+				"diceModifier": "+1",
+				"definition": "The target cannot roll more than 2 dice during their defence test\n          1 success: 1 wound\n          2 successes: 1 wound and push target 2 hexes"
+			},
+			{
+				"name": "Laser Pistol",
+				"points": 3,
+				"unique": true,
+				"type": "Laser Pistol",
+				"range": 12,
+				"diceModifier": "0",
+				"definition": "This does not use a ranged weapon slot. Attacks with this weapon cost 1 AP less (to a minimum of 1).\n          1 success: 1 wound\n          2 successes: 1 wound and a Blind"
+			},
+			{
+				"name": "Laser Rifle",
+				"points": 3,
+				"unique": true,
+				"type": "Ranged",
+				"range": 16,
+				"diceModifier": "0",
+				"definition": "If the attack uses a focus, add +3 dice. Cannot roll more than 6 dice.\n          1 success: 1 wound\n          4 successes: 2 wounds"
+			},
+			{
+				"name": "Photon Neutralizer",
+				"points": 4,
+				"unique": true,
+				"type": "Ranged",
+				"range": 16,
+				"diceModifier": "+1",
+				"definition": "If an interruption attack with this weapon results in 2 or more successes, gain an Overwatch.\n          1 success: 1 wound\n          2 successes: 1 wound and target loses 2 mana.\n          4 successes: 2 wounds and target loses 2 mana."
+			},
+			{
+				"name": "Cosmic Storm",
+				"points": 1,
+				"unique": true,
+				"type": "Spell",
+				"range": 12,
+				"mana": "0",
+				"diceModifier": "0",
+				"definition": "Instead of resolving the most expensive effect, choose any effect based on the number of successes rolled.\n          1 success: Orko gains 2 mana\n          2 successes: 1 wound\n          3 successes: Teleport target 3 hexes",
+				"availableIn": [
+					"Orko"
+				]
+			},
+			{
+				"name": "Cursed Minions",
+				"points": 2,
+				"unique": true,
+				"type": "Cursed Minions",
+				"range": 8,
+				"mana": 1,
+				"diceModifier": "0",
+				"definition": "This does not use a spell slot. This spell can be used while engaged. Attacks with this spell cost 1 AP less (to a minimum of 1).\n          1 success: Push target 2 hexes\n          2 successes: 1 wound and push target 2 hexes"
+			},
+			{
+				"name": "Fireball",
+				"points": 3,
+				"unique": true,
+				"type": "Spell",
+				"range": 12,
+				"mana": 2,
+				"diceModifier": "0",
+				"definition": "This spell affects the target and all characters within 1 hex from them.\n          Before attacking, spend 2 additional Mana to increase this radius by 1 hex per Mana spent.\n          2 successes: 1 wound\n          3 successes: 2 wounds\n          6 successes: 3 wounds"
+			},
+			{
+				"name": "Eternal Binds",
+				"points": 1,
+				"unique": true,
+				"type": "Spell",
+				"range": 12,
+				"mana": 1,
+				"diceModifier": "+1",
+				"definition": "If target has a debuff, gain 1 die.\n          1 success: Target loses 2 mana\n          2 successes: Target loses 2 mana and gains a Knockdown"
+			},
+			{
+				"name": "Magic Blast",
+				"points": 3,
+				"unique": true,
+				"type": "Spell",
+				"range": 12,
+				"mana": 1,
+				"diceModifier": "-1",
+				"definition": "If the target has less mana than the attacker (after mana is spent for the spell), gain +2 dice.\n          2 successes: 1 wound\n          3 successes: 2 wounds\n          5 successes: 3 wounds"
+			},
+			{
+				"name": "Spell of Protection",
+				"points": 1,
+				"unique": true,
+				"type": "Spell",
+				"range": 12,
+				"mana": 2,
+				"diceModifier": "0",
+				"definition": "This spell targets allies instead of enemies. The target does not make a defence test.\n          Attacks with this spell cost 1 AP less (to a minimum of 1).\n          1 success: Protection"
+			},
+			{
+				"name": "Thunder",
+				"points": 3,
+				"unique": true,
+				"type": "Spell",
+				"range": 12,
+				"mana": 1,
+				"diceModifier": "0",
+				"definition": "During interruptions, attacks with this spell cost 1 AP less (to a minimum of 1).\n          1 success: 1 wound\n          2 successes: 1 wound and a Blind\n          3 successes: 2 wounds and a Blind"
+			},
+			{
+				"name": "Flaming Missile",
+				"points": 3,
+				"unique": true,
+				"type": "Spell",
+				"range": 16,
+				"mana": 2,
+				"diceModifier": "0",
+				"definition": "When this character has a focus, the mana cost is reduced to 0.\n          1 success: 1 wound\n          3 successes: 2 wounds"
+			},
+			{
+				"name": "Shadow Strike",
+				"points": 2,
+				"unique": true,
+				"type": "Spell",
+				"range": 12,
+				"mana": 1,
+				"diceModifier": "-1",
+				"definition": "Before attacking, spend up to 3 mana to gain 1 die per mana spent.\n          1 success: 1 wound\n          3 successes: 2 wounds\n          5 successes: 3 wounds",
+				"availableIn": [
+					"Evil-Lyn"
+				]
+			},
+			{
+				"name": "Battle Armor I",
+				"points": 4,
+				"unique": true,
+				"type": "Armour",
+				"definition": "Once per round, when receiving at least 1 Wound, the character may spend 2 Mana to reduce the number of Wounds by 1."
+			},
+			{
+				"name": "Battle Harness",
+				"points": 3,
+				"unique": true,
+				"type": "Armour",
+				"definition": "+1 Toughness"
+			},
+			{
+				"name": "Gear Tech Vest",
+				"points": 3,
+				"unique": true,
+				"type": "Armour",
+				"definition": "+1 Mind"
+			},
+			{
+				"name": "Helm",
+				"points": 2,
+				"unique": true,
+				"type": "Armour",
+				"definition": "At the end of an interruption, gain a focus."
+			},
+			{
+				"name": "Magic Cloak",
+				"points": 1,
+				"unique": true,
+				"type": "Armour",
+				"definition": "The character can have an additional spell weapon.",
+				"addsUpgradeType": "Spell"
+			},
+			{
+				"name": "Weapon Holster",
+				"points": 0,
+				"unique": true,
+				"type": "Armour",
+				"definition": "The character can have an additional trinket weapon.",
+				"addsUpgradeType": "Trinket"
+			},
+			{
+				"name": "Flaming Shield",
+				"points": 2,
+				"unique": true,
+				"type": "Shield",
+				"definition": "When the character has a Focus, gain +1 to the scope of defence tests against all frontal attacks."
+			},
+			{
+				"name": "Shield of Ka",
+				"points": 2,
+				"unique": true,
+				"type": "Shield",
+				"definition": "If the character is a target of a frontal attack at a distance of 6\" or farther, gain +1 to the scope of that defence test."
+			},
+			{
+				"name": "Amulet of Avarice",
+				"points": 2,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "If there are no enemies within 6\": +1 Power Otherwise: -1 Power"
+			},
+			{
+				"name": "Gem of Magoo",
+				"points": 2,
+				"unique": true,
+				"type": "Trinket",
+				"mana": 1,
+				"ap": 1,
+				"definition": "Power Gain. Choose an ally within 12\". The chosen ally gains a Focus."
+			},
+			{
+				"name": "Jet Pack",
+				"points": 3,
+				"unique": true,
+				"type": "Trinket",
+				"mana": 1,
+				"ap": 1,
+				"definition": "Long Jump. The character can jump up to their Speed value -1."
+			},
+			{
+				"name": "Golden Disk of Knowledge",
+				"points": 2,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "The character skill tests gain +1 Die."
+			},
+			{
+				"name": "Magic Feather",
+				"points": 1,
+				"unique": true,
+				"type": "Trinket",
+				"mana": 2,
+				"definition": "Cleansing. Test Power. 1 Success: Choose an ongoing effect within 8\". Remove it."
+			},
+			{
+				"name": "Horn of Evil",
+				"points": 1,
+				"unique": true,
+				"type": "Trinket",
+				"mana": 2,
+				"definition": "Ancient Magic. Choose an ongoing effect within 16\", it is not removed during the next clean up phase."
+			},
+			{
+				"name": "Magic Potion",
+				"points": 2,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "Disposable. Gain 2 Mana."
+			},
+			{
+				"name": "Orb of Power",
+				"points": 2,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "Upon activation, gain 2 Mana."
+			},
+			{
+				"name": "Polarizer",
+				"points": 2,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "When the character has a Focus: +1 Perception.\n          Otherwise: -1 Perception"
+			},
+			{
+				"name": "Wheel of Infinity",
+				"points": 2,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "At the end of the activation or interruption, if the character performed no attacks, they gain an Overwatch."
+			},
+			{
+				"name": "Ram Stone",
+				"points": 2,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "Any Melee attack made immediately after a move action, gain +1 Die."
+			},
+			{
+				"name": "Grayskull Ring",
+				"points": 2,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "If the character's attack results in 3 or more Successes, gain a Focus."
+			},
+			{
+				"name": "Spellstone",
+				"points": 2,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "If the character's attack results in 2 or more Successes, gain 1 Mana."
+			},
+			{
+				"name": "Sun Scarab",
+				"points": 2,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "All attacks against enemies with a Debuff, gain +1 Die."
+			},
+			{
+				"name": "Ambrosia",
+				"points": 2,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "Disposable.\n          Gain 1 Action."
+			},
+			{
+				"name": "Gem of Tamadge",
+				"points": 2,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "All interruption attacks gain +1 die."
+			},
+			{
+				"name": "Steel Shield",
+				"points": 2,
+				"unique": true,
+				"type": "Shield",
+				"definition": "If the character is a target of a frontal Melee Attack, gain a Focus."
+			},
+			{
+				"name": "Force Field Rod",
+				"points": 2,
+				"unique": true,
+				"type": "trinket",
+				"definition": "Disposable.\n          Spend 1 AP and place 3 force fields within 8\"."
+			},
+			{
+				"name": "Coridite",
+				"points": 1,
+				"unique": true,
+				"type": "trinket",
+				"definition": "if the character's interruption attack results in 2 or more  Successes, draw a fate card."
+			},
+			{
+				"name": "Tiara",
+				"points": 1,
+				"unique": true,
+				"type": "trinket",
+				"definition": "if the character's skill test results in 2 or more  Successes, gain 1 Mana."
+			},
+			{
+				"name": "Cloak of Doom",
+				"points": 2,
+				"unique": true,
+				"type": "Armour",
+				"definition": "If within 6\" there is an ally or an enemy with a Debuff, gain +1 Die to all defence tests."
+			},
+			{
+				"name": "Belt",
+				"points": 2,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "If the character has at least 2 Wounds, +1 Strength"
+			},
+			{
+				"name": "Teleporter",
+				"points": 2,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "Disposable.\n          Place 2 teleporters within 8\"."
+			},
+			{
+				"name": "Shin-Guards",
+				"points": 1,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "All attacks gain +1 Die, but cannot deal more than 1 Wound."
+			},
+			{
+				"name": "Reinforced Limbs",
+				"points": 0,
+				"unique": true,
+				"type": "Armour",
+				"definition": "Attacks of opportunity against a Tyrantisaurus have their scope decreased by 1 (instead of increased)",
+				"availableIn": [
+					"Tyrantisaurus"
+				]
+			},
+			{
+				"name": "King's Goblet",
+				"points": 2,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "At the end of the activation, if the character performed no attacks, they gain a Focus."
+			},
+			{
+				"name": "Visor",
+				"points": 1,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "Enemy attacks trigger this character's overwatches. Interruption starts after the attack."
+			},
+			{
+				"name": "Assassin's Belt",
+				"points": 2,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "Flank attacks gain +1 Die."
+			},
+			{
+				"name": "Bomb Pack",
+				"points": 3,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "Disposable. Spend 1 AP and place a crater within 8\"."
+			},
+			{
+				"name": "Gas Tank",
+				"points": 2,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "Disposable. Place a gas tank within 12\""
+			},
+			{
+				"name": "Grayskull Reliquary",
+				"points": 0,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "Upon activation, gain 1 Wound and a Focus"
+			},
+			{
+				"name": "Book of Living Spells",
+				"points": 1,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "Increase the maximum Mana by 2."
+			},
+			{
+				"name": "Leather Jerkin",
+				"points": 1,
+				"unique": true,
+				"type": "Armour",
+				"definition": "When the character is attacked by the interrupting enemy, gain +1 Die to the defence test."
+			},
+			{
+				"name": "Inquisitor Armor",
+				"points": 3,
+				"unique": true,
+				"type": "Armour",
+				"definition": "This character can be attacked only once during every activation or interruption."
+			},
+			{
+				"name": "Wrap",
+				"points": 1,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "Disposable. When this character is about to lose their Buff or Debuff, you can use this card to keep it."
+			},
+			{
+				"name": "Magical Shell",
+				"points": 1,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "Defence tests against skills gain 1 Die."
+			},
+			{
+				"name": "Magical Lamp",
+				"points": 1,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "Spell attacks gain +1 Die. After the Spell attack, this character receives a Curse debuff if at least one '1' was rolled in the attack test."
+			},
+			{
+				"name": "Acid Vial",
+				"points": 1,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "If this character's flank attack results in 2 or more Successes, the target receives a Blind debuff."
+			},
+			{
+				"name": "Rotating Shield",
+				"points": 1,
+				"unique": true,
+				"type": "Trinket",
+				"definition": "After being attacked by a frontal Ranged Attack or Spell Attack, this character is pulled 2 hexes towards the attacker."
+			},
+			{
+				"name": "Illusionary Attack",
+				"points": 2,
+				"range": 12,
+				"mana": 1,
+				"diceModifier": "-1",
+				"unique": true,
+				"type": "Spell",
+				"definition": "Before attacking, test (Power) to gain 1 Die per Success received (to maximum of 5).\n          1 success: 1 Wound\n3 successes: 1 Wound and draw a fate card\n5 successes: 1 Wound and draw 2 fate cards"
+			},
+			{
+				"name": "Scythe of Doom",
+				"points": 2,
+				"diceModifier": "0",
+				"unique": true,
+				"type": "Melee",
+				"definition": "Before attacking, if the target has a Debuff, remove a Debuff from the target and gain +2 Dice.\n          1 success: 1 Wound\n3 successes: 1 Wound and a Curse debuff\n5 successes: 2 Wounds and a Curse debuff"
+			},
+			{
+				"name": "Beast Man's Whip",
+				"points": 2,
+				"diceModifier": "-1",
+				"unique": true,
+				"type": "Melee",
+				"definition": "Once per activation, if Beast Man made a Melee Attack, he can spend 2 Mana to immediately perform a free Melee Attack with this weapon.\n          1 success: 1 Wound\n3 successes: 2 Wounds",
+				"availableIn": [
+					"Beast Man"
+				]
+			},
+			{
+				"name": "Mega Blaster",
+				"points": 3,
+				"range": 8,
+				"diceModifier": "-2",
+				"unique": true,
+				"type": "Ranged",
+				"definition": "Before attacking, test (Strength) to gain 1 Die per Success received (to maximum of 5).\n          1 success: 1 Wound\n3 successes: 2 Wounds\n5 successes: 3 Wounds"
+			},
+			{
+				"name": "Ray of Destruction",
+				"points": 2,
+				"range": 0,
+				"mana": 1,
+				"diceModifier": "0",
+				"unique": true,
+				"type": "Spell",
+				"definition": "This spell can be used while engaged. Can only target enemies this character is engaged with.\n          Gain 1 Die per Wound on this character (to maximum of 3).\n          1 success: 1 Wound\n3 successes: 2 Wounds"
+			},
+			{
+				"name": "Fatal Flaw",
+				"points": 2,
+				"range": 16,
+				"mana": 0,
+				"diceModifier": "+1",
+				"unique": true,
+				"type": "Spell",
+				"definition": "This spell can only target enemies with a Debuff. After the attack, remove a Debuff from the target.\n          1 success: This character gains 1 Mana\n2 successes: 1 Wound and this character gains 2 Mana\n3 successes: 1 Wound and this character gains 3 Mana"
+			},
+			{
+				"name": "Skull Weapon",
+				"points": 4,
+				"diceModifier": "+1",
+				"unique": true,
+				"type": "Melee",
+				"definition": "If an attack with this weapon results in 2 or more Successes, pass this character's Debuff to the target.\n          1 success: 1 Wound\n3 successes: 2 Wounds\n5 successes: 3 Wounds"
+			},
+			{
+				"name": "Tyrantisaurus Blaster",
+				"points": 0,
+				"diceModifier": "0",
+				"range": 16,
+				"unique": true,
+				"type": "Ranged",
+				"definition": "This weapon cannot use a Focus and its scope cannot be modified. Gain +1 Die for every 5\" between Tyrantisaurus and the target.\n          1 success: 1 Wound\n          3 successes: 1 Wound and a Blind debuff\n          4 successes: 2 Wounds and a Blind debuff",
+				"availableIn": [
+					"Tyrantisaurus"
+				]
+			},
+			{
+				"name": "Tyrantisaurus Tail",
+				"points": 0,
+				"diceModifier": "0",
+				"unique": true,
+				"type": "Melee",
+				"definition": "This weapon affects all characters engaged with a Tyrantisaurus.\n          -1 Die for every engaged character (to a maximum of 3).\n          1 success: 1 Wound\n3 successes: 2 Wounds and push target 2 hexes",
+				"availableIn": [
+					"Tyrantisaurus"
+				]
+			},
+			{
+				"name": "Short Axe",
+				"points": 2,
+				"diceModifier": "0",
+				"unique": true,
+				"type": "Melee",
+				"definition": "Attacks with this weapon cost 1 AP less (to a minimum of 1).\n          1 success: 1 Wound\n3 successes: 1 Wound and 1 Wound (if this attack had a Focus).",
+				"availableIn": [
+					"Buzz-Off"
+				]
+			},
+			{
+				"name": "Laser Gun",
+				"points": 3,
+				"unique": true,
+				"type": "Ranged",
+				"includes": [
+					{
+						"dataSource": "upgrades",
+						"name": "Laser Gun (Human)"
+					},
+					{
+						"dataSource": "upgrades",
+						"name": "Laser Gun (Robot)"
+					},
+					{
+						"dataSource": "upgrades",
+						"name": "Laser Gun (Monster)"
+					}
+				],
+				"definition": "",
+				"availableIn": [
+					"Man-E-Faces"
+				]
+			},
+			{
+				"name": "Laser Gun (Human)",
+				"points": 0,
+				"diceModifier": "+1",
+				"range": 12,
+				"unique": true,
+				"type": "Ranged",
+				"definition": "If Man-E-Faces gains a Robot Face, replace this weapon with Laser Gun (Robot).\n          If Man-E-Faces gains a Monster Face, replace this weapon with Laser Gun (Monster).\n          1 success: 1 Wound\n2 successes: 2 Wounds and Man-E-Faces gains a Protection Buff.",
+				"availableIn": [
+					"Man-E-Faces"
+				],
+				"unlockedBy": "Laser Gun (Human)"
+			},
+			{
+				"name": "Laser Gun (Robot)",
+				"points": 0,
+				"diceModifier": "0",
+				"range": 16,
+				"unique": true,
+				"type": "Ranged",
+				"definition": "At the end of the round, replace this weapon with Laser Gun (Human).\n          1 success: 1 Wound\n3 successes: 2 Wounds",
+				"availableIn": [
+					"Man-E-Faces"
+				],
+				"unlockedBy": "Laser Gun (Human)"
+			},
+			{
+				"name": "Laser Gun (Monster)",
+				"points": 0,
+				"diceModifier": "0",
+				"range": 8,
+				"unique": true,
+				"type": "Ranged",
+				"definition": "At the end of the round, replace this weapon with Laser Gun (Human).\n          This weapon can be used as a melee weapon.\n          1 success: 1 Wound\n3 successes: 2 Wounds",
+				"availableIn": [
+					"Man-E-Faces"
+				],
+				"unlockedBy": "Laser Gun (Human)"
+			},
+			{
+				"name": "Long Axe",
+				"points": 4,
+				"diceModifier": "0",
+				"unique": true,
+				"type": "Melee",
+				"definition": "At the end of the activation, if this character has a Focus, gain a Protection Buff.\n          1 success: 1 Wound\n3 successes: 2 Wounds\n5 successes: 3 Wounds"
+			},
+			{
+				"name": "Rebel Pistol",
+				"points": 2,
+				"diceModifier": "+1",
+				"range": 8,
+				"unique": true,
+				"type": "Rebel Pistol",
+				"definition": "This does not use a ranged weapon slot.\n          During Interruptions, if this character isn't engaged, this weapon can target any enemy, not only the one interrupted.\n          1 success: 1 Wound\n3 successes: 1 Wound and this character gains a Focus."
+			},
+			{
+				"name": "Power of Friendship",
+				"points": 3,
+				"diceModifier": "+1",
+				"range": 12,
+				"mana": 2,
+				"unique": true,
+				"type": "Spell",
+				"definition": "Targets allies instead of enemies. The target does not make a defense test.\n          Attacks with this spell cost 1 AP less (to minimum of 1).\n          2 successes: This character and the target gain an Enhancement Buff."
+			},
+			{
+				"name": "Swiftness",
+				"points": 2,
+				"diceModifier": "0",
+				"range": 12,
+				"mana": 2,
+				"unique": true,
+				"type": "Spell",
+				"definition": "Targets allies instead of enemies. The target does not make a defense test.\n          Attacks with this spell cost 1 AP less (to minimum of 1).\n          2 successes: Quickness Buff.\n4 successes: Quickness Buff and a Focus"
+			},
+			{
+				"name": "Club",
+				"points": 2,
+				"diceModifier": "-2",
+				"unique": true,
+				"type": "Melee",
+				"definition": "Gain +1 Die for every activated enemy.\n          1 success: 1 Wound\n          2 successes: 2 Wounds\n          4 successes: 3 Wounds"
+			},
+			{
+				"name": "Dragon Blaster",
+				"points": 4,
+				"diceModifier": "+1",
+				"unique": true,
+				"type": "Ranged",
+				"definition": "This weapon affects the target and all characters that are both within 3 hexes from the target and within the target's rear arc.\n          1 success: 1 Wound\n3 successes: 1 Wound and 1 Wound (only additional target)\n4 successes: 2 Wounds"
+			},
+			{
+				"name": "Strong will Fall",
+				"points": 3,
+				"diceModifier": "0",
+				"range": 16,
+				"mana": 1,
+				"unique": true,
+				"type": "Spell",
+				"definition": "Before attacking, if the target has a Buff, gain +2 Dice and remove a Buff from the target.\n          1 success: 1 Wound\n4 successes: 2 Wounds"
+			},
+			{
+				"name": "Tornado",
+				"points": 3,
+				"diceModifier": "+1",
+				"range": 12,
+				"mana": 1,
+				"unique": true,
+				"type": "Spell",
+				"definition": "This spell can target any character, if doesn't affect them, but it does affect other characters within 4 hexes. Pulls caused by this spell are made between main and additional targets.\n          1 success: Pull target 1 hex\n2 successes: 1 Wound and pull target 2 hexes\n3 successes: 1 Wound and pull target 3 hexes"
+			},
+			{
+				"name": "Metal Fist",
+				"points": 2,
+				"diceModifier": "0",
+				"unique": true,
+				"type": "Melee",
+				"definition": "Attacks with this weapon made immediately after a move action cost 1 AP less (to a minimum of 0). Pushes made with this weapon trigger allies' overwatches.\n          1 success: Push target 1 hex\n          2 successes: 1 Wound and push target 2 hexes\n          3 successes: 2 Wound and pull target 3 hexes"
+			},
+			{
+				"name": "Halberd",
+				"points": 3,
+				"diceModifier": "0",
+				"unique": true,
+				"type": "Melee",
+				"definition": "For every '6' rolled in the attack test, the target loses 1 defence Die. The number of defence Dice  cannot be reduced by 2.\n          1 success: 1 Wound\n3 successes: 2 Wounds\n5 successes: 3 Wounds"
+			},
+			{
+				"name": "Magic Wand",
+				"points": 2,
+				"diceModifier": "0",
+				"range": 12,
+				"unique": true,
+				"type": "Ranged",
+				"definition": "This does not use a ranged weapon slot.\n          Before attacking, spend up to 3 Mana to gain 1 Dice per Mana spent. The target tests Mind instead of Toughness.\n          1 success: Perform a free Spell Attack on the same target\n          2  success: Perform a free Spell Attack on the same target at no Mana cost"
+			},
+			{
+				"name": "Black Blaster",
+				"points": 3,
+				"diceModifier": "0",
+				"range": 16,
+				"unique": true,
+				"type": "Ranged",
+				"definition": "Attacks with this weapon are treated as skill tests and attack tests.\n          1 success: 1 Wound\n4 successes: 2 Wounds"
+			},
+			{
+				"name": "Motivational Speech",
+				"points": 1,
+				"diceModifier": "-2",
+				"mana": 1,
+				"unique": true,
+				"type": "Motivational Speech",
+				"definition": "This spell does not use a spell slot, does not require a target, and tests Strength instead of Power. Do not make a defence test.\n          1 success: The next ally activated this round gains 1 AP"
+			},
+			{
+				"name": "Chain Lightning",
+				"points": 4,
+				"diceModifier": "+1",
+				"range": 12,
+				"mana": 2,
+				"unique": true,
+				"type": "Spell",
+				"definition": "If at least one '6' is rolled in this attack, perform a free attack with this spell on another enemy within 6\" from the target. This attack uses 2 Dice fewer than the previous one.\n          1 success: 1 Wound\n3 successes: 2 Wounds"
+			},
+			{
+				"name": "Insults",
+				"points": 1,
+				"diceModifier": "0",
+				"range": 8,
+				"mana": 1,
+				"unique": true,
+				"type": "Spell",
+				"definition": "This spell can target any character.\n          Attacks with this spell cost 1 AP less (to a minimum of 0).\n          1 success: A Curse Debuff and an Enhancement Debuff.\n          3 successes: Enhancement Debuff"
+			},
+			{
+				"name": "Hand of Fate",
+				"points": 2,
+				"diceModifier": "0",
+				"range": 12,
+				"mana": 1,
+				"unique": true,
+				"type": "Spell",
+				"definition": "Before attacking, add up to 3 Dice. All successes are cancelled if at least one '1' is rolled in the attack test.\n          2 successes: 1 Wound\n4 successes: 2 Wounds\n6 successes: 3 Wounds"
+			},
+			{
+				"name": "Multi-Cannon",
+				"points": 3,
+				"diceModifier": "+1",
+				"range": 12,
+				"unique": true,
+				"type": "Ranged",
+				"definition": "Choose up to 3 different targets and attack them one by one. Suffer -1 Die for every chosen target.\n          1 success: 1 Wound\n3 successes: 2 Wounds"
+			},
+			{
+				"name": "Knife of Evil",
+				"points": 3,
+				"diceModifier": "+1",
+				"unique": true,
+				"type": "Melee",
+				"definition": "Attacks with this weapon are always treated as flank attacks, but do not receive a bonus to the scope unless they are really made from a flank.\n          1 success: 1 Wound\n          2 successes: 1 Wound and change the target's facing\n          3 successes: 2 Wounds and change the target's facing"
+			},
+			{
+				"name": "Cursed Sword",
+				"points": 2,
+				"diceModifier": "+1",
+				"unique": true,
+				"type": "Melee",
+				"definition": "If an attack with this weapon results in 2 or less Successes, this character gains a Curse Debuff.\n          1 success: 1 Wound\n2 successes: 2 Wounds\n5 successes: 3 Wounds"
+			},
+			{
+				"name": "Power Blaster",
+				"points": 3,
+				"diceModifier": "+1",
+				"range": 12,
+				"unique": true,
+				"type": "Ranged",
+				"definition": "If an attack with this weapon results in 2 or more Successes, Webstor can perform a free 2-hex move action.\n          1 success: 1 Wound\n3 successes: 1 Wound and a Curse debuff (if flank attack)\n5 successes: 2 Wounds and a Curse debuff (if flank attack)",
+				"availableIn": [
+					"Webstor"
+				]
+			}
+		],
+		"factions": [
+			{
+				"name": "Masters of the Universe",
+				"alignment": "Warbands",
+				"armyBonus": "",
+				"additionalRules": ""
+			},
+			{
+				"name": "Evil Warriors",
+				"alignment": "Warbands",
+				"armyBonus": "",
+				"additionalRules": ""
+			}
+		],
+		"characters": [
+			{
+				"name": "He-Man",
+				"factions": [
+					{
+						"name": "Masters of the Universe",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1720904065/He-Man_Test_01_hce86t.png",
+				"skills": [
+					"I Have the Power!",
+					"Superhuman Reflex"
+				],
+				"upgradeTypes": [
+					"Melee",
+					"Ranged",
+					"Armour",
+					"Shield",
+					"Trinket",
+					"Trinket",
+					"Dagger",
+					"Laser Pistol",
+					"Rebel Pistol"
+				],
+				"points": 19,
+				"health": 5,
+				"toughness": 3,
+				"mind": 3,
+				"power": 3,
+				"perception": 3,
+				"strength": 5,
+				"standardspeed": 5,
+				"focusedspeed": 8,
+				"unavailableWith": [
+					"He-Man with Battle Cat"
+				]
+			},
+			{
+				"name": "Teela",
+				"factions": [
+					{
+						"name": "Masters of the Universe",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1720902725/Teela_Test_01_p4p8le.png",
+				"skills": [
+					"Acrobatic",
+					"Warrior Goddess"
+				],
+				"upgradeTypes": [
+					"Melee",
+					"Spell",
+					"Shield",
+					"Trinket",
+					"Trinket",
+					"Dagger",
+					"Cursed Minions",
+					"Motivational Speech"
+				],
+				"points": 16,
+				"health": 5,
+				"toughness": 2,
+				"mind": 3,
+				"power": 4,
+				"perception": 3,
+				"strength": 4,
+				"standardspeed": 5,
+				"focusedspeed": 8
+			},
+			{
+				"name": "Sorceress",
+				"factions": [
+					{
+						"name": "Masters of the Universe",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1720903576/Sorceress_Test_01_lqcs3f.png",
+				"skills": [
+					"Vision of the Future",
+					"Telepathic Guide"
+				],
+				"upgradeTypes": [
+					"Melee",
+					"Spell",
+					"Spell",
+					"Trinket",
+					"Trinket",
+					"Dagger",
+					"Cursed Minions",
+					"Motivational Speech"
+				],
+				"points": 16,
+				"health": 4,
+				"toughness": 1,
+				"mind": 4,
+				"power": 5,
+				"perception": 2,
+				"strength": 3,
+				"standardspeed": 5,
+				"focusedspeed": 10
+			},
+			{
+				"name": "Buzz-Off",
+				"factions": [
+					{
+						"name": "Masters of the Universe",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1721250781/Buzz-Off_Test_01_arirja.png",
+				"skills": [
+					"Eye of the Bee",
+					"Hero in the Sky"
+				],
+				"upgradeTypes": [
+					"Melee",
+					"Melee",
+					"Trinket",
+					"Trinket",
+					"Trinket",
+					"Dagger"
+				],
+				"points": 15,
+				"health": 4,
+				"toughness": 3,
+				"mind": 2,
+				"power": 2,
+				"perception": 3,
+				"strength": 4,
+				"standardspeed": 6,
+				"focusedspeed": 9
+			},
+			{
+				"name": "Man-E-Faces",
+				"factions": [
+					{
+						"name": "Masters of the Universe",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1721251671/Man-E-Faces_Test_01_ivp3az.png",
+				"skills": [
+					"Face of the Robot",
+					"Face of the Monster"
+				],
+				"upgradeTypes": [
+					"Melee",
+					"Ranged",
+					"Armour",
+					"Trinket",
+					"Trinket",
+					"Dagger",
+					"Laser Pistol",
+					"Rebel Pistol"
+				],
+				"points": 17,
+				"health": 5,
+				"toughness": 3,
+				"mind": 3,
+				"power": 3,
+				"perception": 3,
+				"strength": 3,
+				"standardspeed": 5,
+				"focusedspeed": 8
+			},
+			{
+				"name": "Fisto",
+				"factions": [
+					{
+						"name": "Masters of the Universe",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1721291165/Fisto_Test_01_kojzcs.png",
+				"skills": [
+					"Lone Warrior",
+					"Eager to Punch"
+				],
+				"upgradeTypes": [
+					"Melee",
+					"Ranged",
+					"Armour",
+					"Trinket",
+					"Trinket",
+					"Dagger",
+					"Laser Pistol",
+					"Rebel Pistol"
+				],
+				"points": 18,
+				"health": 6,
+				"toughness": 3,
+				"mind": 2,
+				"power": 2,
+				"perception": 3,
+				"strength": 4,
+				"standardspeed": 5,
+				"focusedspeed": 8
+			},
+			{
+				"name": "Palace Guard A",
+				"factions": [
+					{
+						"name": "Masters of the Universe",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1721290462/Palace_Guard_A_Test_01_xflqmu.png",
+				"skills": [
+					"Heroic Guard",
+					"Endless Heroes"
+				],
+				"upgradeTypes": [
+					"Melee",
+					"Ranged",
+					"Armour",
+					"Dagger",
+					"Laser Pistol",
+					"Rebel Pistol"
+				],
+				"points": 9,
+				"health": 3,
+				"toughness": 2,
+				"mind": 2,
+				"power": 1,
+				"perception": 3,
+				"strength": 4,
+				"standardspeed": 4,
+				"focusedspeed": 6
+			},
+			{
+				"name": "Palace Guard B",
+				"factions": [
+					{
+						"name": "Masters of the Universe",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1721289520/Palace_Guard_Test_01_wxzr18.png",
+				"skills": [
+					"Heroic Guard",
+					"Endless Heroes"
+				],
+				"upgradeTypes": [
+					"Melee",
+					"Ranged",
+					"Armour",
+					"Dagger",
+					"Laser Pistol",
+					"Rebel Pistol"
+				],
+				"points": 9,
+				"health": 3,
+				"toughness": 2,
+				"mind": 2,
+				"power": 1,
+				"perception": 3,
+				"strength": 4,
+				"standardspeed": 4,
+				"focusedspeed": 6
+			},
+			{
+				"name": "He-Man with Battle Cat",
+				"factions": [
+					{
+						"name": "Masters of the Universe",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1721260948/He-Man_with_Battlecat_Test_01_bqlbo3.png",
+				"skills": [
+					"Lead by Example",
+					"Tiger's Claw"
+				],
+				"upgradeTypes": [
+					"Melee",
+					"Ranged",
+					"Shield",
+					"Trinket",
+					"Trinket",
+					"Trinket",
+					"Dagger",
+					"Laser Pistol",
+					"Rebel Pistol"
+				],
+				"points": 30,
+				"health": 8,
+				"toughness": 3,
+				"mind": 3,
+				"power": 3,
+				"perception": 3,
+				"strength": 5,
+				"standardspeed": 5,
+				"focusedspeed": 5,
+				"unavailableWith": [
+					"He-Man"
+				]
+			},
+			{
+				"name": "Man-At-Arms",
+				"factions": [
+					{
+						"name": "Masters of the Universe",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1720863653/Men-At-Arms_Test_01_olojko.png",
+				"skills": [
+					"Always Vigilant",
+					"Master Tactician"
+				],
+				"upgradeTypes": [
+					"Melee",
+					"Ranged",
+					"Armour",
+					"Shield",
+					"Trinket",
+					"Trinket",
+					"Dagger",
+					"Arm Cannon",
+					"Laser Pistol",
+					"Rebel Pistol"
+				],
+				"points": 18,
+				"health": 5,
+				"toughness": 4,
+				"mind": 2,
+				"power": 2,
+				"perception": 4,
+				"strength": 4,
+				"standardspeed": 5,
+				"focusedspeed": 8
+			},
+			{
+				"name": "Skeletor",
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1720904444/Skeletor_Test_01_dng5aq.png",
+				"factions": [
+					{
+						"name": "Evil Warriors",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"upgradeTypes": [
+					"Melee",
+					"Spell",
+					"Armour",
+					"Shield",
+					"Trinket",
+					"Trinket",
+					"Dagger",
+					"Cursed Minions",
+					"Motivational Speech"
+				],
+				"skills": [
+					"Summon",
+					"Lord of Destruction"
+				],
+				"points": 21,
+				"health": 5,
+				"toughness": 3,
+				"mind": 3,
+				"power": 5,
+				"perception": 2,
+				"strength": 4,
+				"standardspeed": 5,
+				"focusedspeed": 8
+			},
+			{
+				"name": "Stratos",
+				"factions": [
+					{
+						"name": "Masters of the Universe",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1720904853/Stratos_Test_01_wrej7h.png",
+				"upgradeTypes": [
+					"Melee",
+					"Ranged",
+					"Spell",
+					"Armour",
+					"Trinket",
+					"Trinket",
+					"Dagger",
+					"Cursed Minions",
+					"Motivational Speech",
+					"Laser Pistol",
+					"Rebel Pistol"
+				],
+				"skills": [
+					"To the Sky!",
+					"Leader of Avion"
+				],
+				"points": 17,
+				"health": 4,
+				"toughness": 2,
+				"mind": 3,
+				"power": 3,
+				"perception": 5,
+				"strength": 3,
+				"standardspeed": 6,
+				"focusedspeed": 9
+			},
+			{
+				"name": "Orko",
+				"factions": [
+					{
+						"name": "Masters of the Universe",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1720910474/Orko_01_hrynje.png",
+				"upgradeTypes": [
+					"Spell",
+					"Spell",
+					"Trinket",
+					"Trinket",
+					"Trinket",
+					"Cursed Minions",
+					"Motivational Speech"
+				],
+				"skills": [
+					"Magic Hat",
+					"Traveller from Trolla"
+				],
+				"points": 16,
+				"health": 3,
+				"toughness": 1,
+				"mind": 3,
+				"power": 6,
+				"perception": 2,
+				"strength": 2,
+				"standardspeed": 5,
+				"focusedspeed": 8
+			},
+			{
+				"name": "Ram Man",
+				"factions": [
+					{
+						"name": "Masters of the Universe",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1720946549/Ram_Man_Test_01_tczzyv.png",
+				"upgradeTypes": [
+					"Melee",
+					"Armour",
+					"Shield",
+					"Trinket",
+					"Trinket",
+					"Dagger"
+				],
+				"skills": [
+					"Ramming Speed",
+					"Human Battering Ram"
+				],
+				"points": 18,
+				"health": 6,
+				"toughness": 4,
+				"mind": 1,
+				"power": 2,
+				"perception": 2,
+				"strength": 4,
+				"standardspeed": 4,
+				"focusedspeed": 6
+			},
+			{
+				"name": "Evil-Lyn",
+				"factions": [
+					{
+						"name": "Evil Warriors",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1721261171/Evil-Lyn_02_oiwxya.png",
+				"upgradeTypes": [
+					"Spell",
+					"Spell",
+					"Armour",
+					"Trinket",
+					"Trinket",
+					"Cursed Minions",
+					"Motivational Speech"
+				],
+				"skills": [
+					"Shared Power",
+					"Dark Presence"
+				],
+				"points": 21,
+				"health": 4,
+				"toughness": 1,
+				"mind": 4,
+				"power": 5,
+				"perception": 3,
+				"strength": 2,
+				"standardspeed": 5,
+				"focusedspeed": 8
+			},
+			{
+				"name": "Mer-Man",
+				"factions": [
+					{
+						"name": "Evil Warriors",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1720946048/Mer-Man_Test_01_kthqc5.png",
+				"upgradeTypes": [
+					"Melee",
+					"Ranged",
+					"Spell",
+					"Armour",
+					"Trinket",
+					"Trinket",
+					"Dagger",
+					"Cursed Minions",
+					"Motivational Speech",
+					"Laser Pistol",
+					"Rebel Pistol"
+				],
+				"skills": [
+					"Instant Puddle",
+					"Freezing Ray"
+				],
+				"points": 17,
+				"health": 5,
+				"toughness": 3,
+				"mind": 2,
+				"power": 3,
+				"perception": 4,
+				"strength": 4,
+				"standardspeed": 5,
+				"focusedspeed": 8
+			},
+			{
+				"name": "Trap Jaw",
+				"factions": [
+					{
+						"name": "Evil Warriors",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1720903180/Trap-Jaw_Test_01_ee3uhk.png",
+				"upgradeTypes": [
+					"Ranged",
+					"Armour",
+					"Trinket",
+					"Trinket",
+					"Trinket",
+					"Hook Attachment",
+					"Laser Attachment",
+					"Laser Pistol",
+					"Rebel Pistol"
+				],
+				"skills": [
+					"Weapon Swap",
+					"Grappling Hook"
+				],
+				"points": 17,
+				"health": 4,
+				"toughness": 2,
+				"mind": 3,
+				"power": 2,
+				"perception": 5,
+				"strength": 3,
+				"standardspeed": 5,
+				"focusedspeed": 5,
+				"requiredChildren": [
+					{
+						"name": "Hook Attachment",
+						"points": 2,
+						"elementPropertyName": "upgrades",
+						"quantity": 1,
+						"upgradeIndex": 5
+					}
+				]
+			},
+			{
+				"name": "Tri-Klops",
+				"factions": [
+					{
+						"name": "Evil Warriors",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1720905152/Tri-Klops_Test_01_dlgetv.png",
+				"upgradeTypes": [
+					"Melee",
+					"Ranged",
+					"Armour",
+					"Shield",
+					"Trinket",
+					"Trinket",
+					"Dagger",
+					"Laser Pistol",
+					"Rebel Pistol",
+					"Cursed Minions",
+					"Motivational Speech"
+				],
+				"skills": [
+					"Gammavision",
+					"Optic Blast!"
+				],
+				"points": 17,
+				"health": 5,
+				"toughness": 4,
+				"mind": 2,
+				"power": 2,
+				"perception": 3,
+				"strength": 5,
+				"standardspeed": 4,
+				"focusedspeed": 6
+			},
+			{
+				"name": "Scareglow",
+				"factions": [
+					{
+						"name": "Evil Warriors",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1720901726/Scareglow_Test_01_f5si25.png",
+				"upgradeTypes": [
+					"Melee",
+					"Spell",
+					"Armour",
+					"Trinket",
+					"Trinket",
+					"Dagger",
+					"Cursed Minions",
+					"Motivational Speech"
+				],
+				"skills": [
+					"Nightmare",
+					"Fearsome Presence"
+				],
+				"points": 17,
+				"health": 5,
+				"toughness": 3,
+				"mind": 3,
+				"power": 4,
+				"perception": 3,
+				"strength": 4,
+				"standardspeed": 4,
+				"focusedspeed": 6
+			},
+			{
+				"name": "Beast Man",
+				"factions": [
+					{
+						"name": "Evil Warriors",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1720902161/Beast-Man_Test_01_tw9zrb.png",
+				"upgradeTypes": [
+					"Melee",
+					"Ranged",
+					"Shield",
+					"Trinket",
+					"Trinket",
+					"Dagger",
+					"Laser Pistol",
+					"Rebel Pistol"
+				],
+				"skills": [
+					"Primal Rage",
+					"Supernatural Endurance"
+				],
+				"points": 19,
+				"health": 6,
+				"toughness": 2,
+				"mind": 2,
+				"power": 2,
+				"perception": 3,
+				"strength": 5,
+				"standardspeed": 5,
+				"focusedspeed": 8
+			},
+			{
+				"name": "Whiplash",
+				"factions": [
+					{
+						"name": "Evil Warriors",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1720957974/Whiplash_Test_01_tnau6l.png",
+				"upgradeTypes": [
+					"Melee",
+					"Armour",
+					"Shield",
+					"Trinket",
+					"Trinket",
+					"Dagger"
+				],
+				"skills": [
+					"Cold-Blooded",
+					"Tail Trashing"
+				],
+				"points": 19,
+				"health": 6,
+				"toughness": 4,
+				"mind": 1,
+				"power": 2,
+				"perception": 3,
+				"strength": 5,
+				"standardspeed": 5,
+				"focusedspeed": 5
+			},
+			{
+				"name": "Stinkor",
+				"factions": [
+					{
+						"name": "Evil Warriors",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1720956312/Stinkor_Test_01_bcz6q0.png",
+				"upgradeTypes": [
+					"Melee",
+					"Ranged",
+					"Armour",
+					"Shield",
+					"Trinket",
+					"Trinket",
+					"Dagger",
+					"Laser Pistol",
+					"Rebel Pistol"
+				],
+				"skills": [
+					"Evil Master of Odors",
+					"Stinking Delight"
+				],
+				"points": 16,
+				"health": 5,
+				"toughness": 3,
+				"mind": 2,
+				"power": 3,
+				"perception": 4,
+				"strength": 4,
+				"standardspeed": 5,
+				"focusedspeed": 8
+			},
+			{
+				"name": "Webstor",
+				"factions": [
+					{
+						"name": "Evil Warriors",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1721296590/Webstor_Test_01_oi52xa.png",
+				"upgradeTypes": [
+					"Melee",
+					"Ranged",
+					"Trinket",
+					"Trinket",
+					"Trinket",
+					"Dagger",
+					"Laser Pistol",
+					"Rebel Pistol"
+				],
+				"skills": [
+					"Master of Escape",
+					"Hide and Seek"
+				],
+				"points": 16,
+				"health": 5,
+				"toughness": 2,
+				"mind": 2,
+				"power": 2,
+				"perception": 3,
+				"strength": 3,
+				"standardspeed": 6,
+				"focusedspeed": 9
+			},
+			{
+				"name": "Hover Robot A",
+				"factions": [
+					{
+						"name": "Evil Warriors",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1721295634/Hover_Robot_A_Test_01_lvk6oa.png",
+				"upgradeTypes": [
+					"Trinket",
+					"Trinket"
+				],
+				"skills": [
+					"Hovering Goon",
+					"Endless Evil"
+				],
+				"points": 9,
+				"health": 3,
+				"toughness": 2,
+				"mind": 1,
+				"power": 1,
+				"perception": 2,
+				"strength": 3,
+				"standardspeed": 6,
+				"focusedspeed": 9
+			},
+			{
+				"name": "Hover Robot B",
+				"factions": [
+					{
+						"name": "Evil Warriors",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1721296151/Hover_Robot_B_Test_01_rettam.png",
+				"upgradeTypes": [
+					"Trinket",
+					"Trinket"
+				],
+				"skills": [
+					"Hovering Goon",
+					"Endless Evil"
+				],
+				"points": 9,
+				"health": 3,
+				"toughness": 2,
+				"mind": 1,
+				"power": 1,
+				"perception": 2,
+				"strength": 3,
+				"standardspeed": 6,
+				"focusedspeed": 9
+			},
+			{
+				"name": "Skeletor with Panthor",
+				"factions": [
+					{
+						"name": "Evil Warriors",
+						"heroicTier": "Independent Hero"
+					}
+				],
+				"portraitUrl": "https://res.cloudinary.com/dd4tahvkt/image/upload/v1721259656/Skeletor_with_Panthor_Test_01_m3bbyg.png",
+				"upgradeTypes": [
+					"Melee",
+					"Spell",
+					"Spell",
+					"Shield",
+					"Trinket",
+					"Trinket",
+					"Dagger",
+					"Cursed Minions",
+					"Motivational Speech"
+				],
+				"skills": [
+					"Deception",
+					"Panthor's Fangs"
+				],
+				"points": 32,
+				"health": 8,
+				"toughness": 3,
+				"mind": 3,
+				"power": 5,
+				"perception": 2,
+				"strength": 4,
+				"standardspeed": 6,
+				"focusedspeed": 9
+			}
+		],
+		"keywords": [],
+		"skills": [
+			{
+				"name": "I Have the Power!",
+				"definition": "During any test, He-Man may reroll 1 extra (die) for each (mana token) spent on rerolls.",
+				"ap": 0,
+				"mana": 0
+			},
+			{
+				"name": "Superhuman Reflex",
+				"definition": "He-Man cannot receive (mana token) from fate and glory cards. If he gains a (focus token), he also gainst 1 (mana token).",
+				"ap": 0,
+				"mana": 0
+			},
+			{
+				"name": "Shared Power",
+				"definition": "Any Ally within 8\" can spend Evil-Lyn's mana as their own.",
+				"ap": 0,
+				"mana": 0
+			},
+			{
+				"name": "Dark Presence",
+				"definition": "Test (power) against the (mind) of an enemy within 16\".\n            1 (success): (blind debuff token).",
+				"ap": 0,
+				"mana": 1
+			},
+			{
+				"name": "Summon",
+				"definition": "Test (power) -2.\n            1 (success): Choose an ally within 12\". and teleport the ally to a hex adjacent to Skeletor.",
+				"ap": 1,
+				"mana": 2
+			},
+			{
+				"name": "Lord of Destruction",
+				"definition": "Until the end of the current activation or interruption, Skeletor can use (spell) while engaged.",
+				"ap": 0,
+				"mana": 1
+			},
+			{
+				"name": "Always Vigilant",
+				"definition": "At the end of the activation, if there are no enemies within 8\", gain an (overwatch token).",
+				"ap": 0,
+				"mana": 0
+			},
+			{
+				"name": "Master Tactician",
+				"definition": "Test (power) +1.\n            1 (success): The next ally activated this round gains 2 (mana token).\n            This ability cannot be used during an interruption.",
+				"ap": 1,
+				"mana": 1
+			},
+			{
+				"name": "To the Sky!",
+				"definition": "If Stratos isnt' engaged, spend up to 5 (mana token) to jump 1 hex for every (mana token) spent.",
+				"mana": "X"
+			},
+			{
+				"name": "Leader of Avion",
+				"definition": "Test (power). 1 (success): Choose any activated ally (line of sight not required).\n            This ally gains a (focus token) or an (overwatch token).\n            This ability cannot be used during an interruption.",
+				"mana": 1,
+				"ap": 1
+			},
+			{
+				"name": "Magic Hat",
+				"definition": "Orko starts the game with 3 (mana token).\n            Before Orko or ally within 8\" makes a defence test, Orko may spend up to 3 (mana token) and add to this test 1 extra (die) per (mana token) spent."
+			},
+			{
+				"name": "Traveller from Trolla",
+				"definition": "After spending (mana token) and (action) for (spell), but before making an attack test, Orko has to make a (mind) +1 test.\n            If he does not roll at least 2 (success), his spell has no effect."
+			},
+			{
+				"name": "Ramming Speed",
+				"ap": 1,
+				"mana": 2,
+				"definition": "Ram Man makes a free move action with his (speed) value +2 (to a maximum of 6). Test (strenth) against (toughness) of each enemy within 2 hexes.\n            1 (success): (Knockdown debuff token)"
+			},
+			{
+				"name": "Human Battering Ram",
+				"definition": "If Ram Man ends his activation engaged, he gains a (focus token)."
+			},
+			{
+				"name": "Instant Puddle",
+				"definition": "Test (power).\n            1 (success): Place a (Mer-Man mark token) within 8\". The area within 2 hexes from a (Mer-Man mark token) is treated as difficult terrain.",
+				"mana": 2
+			},
+			{
+				"name": "Freezing Ray",
+				"definition": "Test (power) +1 against the (mind) of an enemy within 12\".\n            1 (success): (cripple debuff token).",
+				"mana": 2
+			},
+			{
+				"name": "Gammavision",
+				"definition": "Test (power) +2 against the (mind) of an enemy within 12\".\n            1 (success): (Tri-Klops mark token), all attacks against a character with a (Tri-Klops mark token) gain a (focus token).",
+				"mana": 2
+			},
+			{
+				"name": "Optic Blast!",
+				"definition": "If an enemy within 8\" receives a (Debuff token), Tri-Klops can spend 1 to 3 (mana token) and test (power) (+1 Die per (mana token) spent) against the (mind) of this enemy.\n            1 (success): 1 (wound token)."
+			},
+			{
+				"name": "Weapon Swap",
+				"definition": "If Trap Jaw has the 'Hook Attachment' equipped, replace it with the 'Laser Attachment'.\n            If Trap Jaw has the 'Laser Attachment' equipped, replace it with the 'Hook Attachment'.",
+				"mana": 1
+			},
+			{
+				"name": "Grappling Hook",
+				"definition": "If Trap Jaw has the 'Hook Attachment' equipped, test (perception) -1.\n            Trap Jaw can jump in a straigth line up to 2 hexes per (success).",
+				"mana": 2
+			},
+			{
+				"name": "Acrobatic",
+				"definition": "Once per her interruption Teela can perform a free 2 hex move action.\n            This action can be made in any direction and cannot be interrupted."
+			},
+			{
+				"name": "Warrior Goddess",
+				"definition": "Allies within 8\" can reroll up to 2 (Dice) during their skill tests."
+			},
+			{
+				"name": "Vision of the Future",
+				"definition": "Test (Power).\n            For every Success look at a top fate card, then place them back on the top of a fate deck in any order.",
+				"mana": 1
+			},
+			{
+				"name": "Telepathic Guide",
+				"definition": "This ability can only be used during an interruption. Choose an ally within 12\" and test (Power) -1.\n            2 Successes: The ally interrupts the same enemy."
+			},
+			{
+				"name": "Eye of the Bee",
+				"definition": "All tests with a Focus, gain +1 Die."
+			},
+			{
+				"name": "Hero in the Sky",
+				"definition": "Each time an ally gets a Focus, Buzz-Off can immediately jump 1 hex. This movement cannot be interrupted."
+			},
+			{
+				"name": "Face of the Robot",
+				"definition": "Gain (Robot Face) and a Focus.  (Robot Face) provides Man-E-Faces with +2 (Perception) and -1 (Toughness).",
+				"ap": 1,
+				"mana": 1
+			},
+			{
+				"name": "Face of the Monster",
+				"definition": "Gain (Monster Face).  (Monster Face) provides Man-E-Faces with +2 (Strength) and -1 (Mind). Test (Strength) -1 against the (Toughness) of an enemy engaged with Man-E-Faces.\n            1 (Success): 1 Wound",
+				"ap": 1,
+				"mana": 1
+			},
+			{
+				"name": "Lone Warrior",
+				"definition": "At the end of the activation, if there are no other characters within 6\", gain an Overwatch."
+			},
+			{
+				"name": "Eager to Punch",
+				"definition": "The Melee attack made immediately after a move action gain +2 Dice."
+			},
+			{
+				"name": "Heroic Guard",
+				"definition": "Whenever an ally on an adjacent hex is about to be attacked, if that attack can target the Palace Guard, you may redirect it to him."
+			},
+			{
+				"name": "Endless Heroes",
+				"definition": "There can be up to 2 Palace Guards in a single force."
+			},
+			{
+				"name": "Lead by Example",
+				"definition": "Any ally within 12\" can use this skill as their own. He-Man interrupts this ally's activation or interruption. During this interruption He-Man can move in any direction.",
+				"mana": 2
+			},
+			{
+				"name": "Tiger's Claw",
+				"definition": "Test (Strength) -1 against the (Mind) of an enemy engaged with He-Man.\n            1 (Success): 1 Wound.\n            2 (Successes): 1 Wound and a (Knockdown debuff).",
+				"ap": 1,
+				"mana": 1
+			},
+			{
+				"name": "Nightmare",
+				"definition": "Test (Power) +1 against the (Mind) of an ally within 16\".\n            1 (Success): (Curse Debuff), Scareglow performs a free move action.",
+				"mana": 1
+			},
+			{
+				"name": "Fearsome Presence",
+				"definition": "If any character ends their activation or interruption within 2 hexes from Scareglow, test (Power) against (Mind) of that character.\n            1 (Success): (Curse Debuff)."
+			},
+			{
+				"name": "Primal Rage",
+				"definition": "Upon activation:\n            If Beast man has at least 1 Wound: gain 1 Mana.\n            Additionally, if Beast Man has at least 3 Wounds: gain 1 AP."
+			},
+			{
+				"name": "Supernatural Endurance",
+				"definition": "When receiving at least 2 Wounds, Beast Man may spend 1 Mana, to reduce the number of Wounds received by 1."
+			},
+			{
+				"name": "Cold-Blooded",
+				"definition": "Whiplash cannot perform a focus action. Each time an ally receives at least 1 (Wound), Whiplash gains a (Focus token)."
+			},
+			{
+				"name": "Tail Trashing",
+				"definition": "Choose a character on an adjacent hex and test (Strength). Target is pushed up to 1 hex per (Success).",
+				"mana": 2
+			},
+			{
+				"name": "Evil Master of Odors",
+				"definition": "At the end of activation, remove all 'Mana tokens' and test 'Toughness' against 'Mind' of all other characters within (+1 per Mana removed) hexes.\n            1 (success): (Blind debuff token) or (Knockdown debuff token) or (Cripple debuff token)."
+			},
+			{
+				"name": "Stinking Delight",
+				"definition": "When any character gains a (Debuff), Stinkor gains 1 (Mana token)."
+			},
+			{
+				"name": "Master of Escape",
+				"definition": "Immediately after Webstor receives at least 1 Wound, he can jump up to 4 hexes. This movement cannot be interrupted."
+			},
+			{
+				"name": "Hide and Seek",
+				"definition": "Gain a Webstor Token. When Webstor has a Webstor token, he can only be attacked or interrupted by characters within 6\", and his flank attacks gain +2 Dice.",
+				"mana": 2
+			},
+			{
+				"name": "Hovering Goon",
+				"definition": "Move actions performed by Hover Robot use jump rules."
+			},
+			{
+				"name": "Endless Evil",
+				"definition": "There can be up to 2 Hover Robots in a single force."
+			},
+			{
+				"name": "Deception",
+				"definition": "During Skeletor's activation or interruption, Skeletor gains 1 Mana for every played fate card."
+			},
+			{
+				"name": "Panthor's Fangs",
+				"definition": "Test (Strength) against (Toughness) of an Enemy engaged with Skeletor.\n            1 (Success): 1 Wound.\n            2 (Successes): 1 Wound and push target 1 hex."
+			}
+		]
+	}
+}
